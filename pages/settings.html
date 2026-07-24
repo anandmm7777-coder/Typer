@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Settings | TypeMaster</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="../css/dashboard.css">
+
+</head>
+
+<body>
+
+<header class="typing-header">
+
+<a href="../home.html"
+class="back-btn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+</a>
+
+<div class="page-title">
+
+<i class="fa-solid fa-gear"></i>
+
+<h2>
+Settings
+</h2>
+
+</div>
+
+</header>
+
+
+
+
+
+<main class="settings-container">
+
+
+
+<div class="settings-card">
+
+<h3>
+
+<i class="fa-solid fa-palette"></i>
+
+Appearance
+
+</h3>
+
+<label class="setting-item">
+
+<span>Dark Mode</span>
+
+<input
+type="checkbox"
+id="darkMode">
+
+</label>
+
+<label class="setting-item">
+
+<span>Animations</span>
+
+<input
+type="checkbox"
+id="animations"
+checked>
+
+</label>
+
+</div>
+
+
+
+
+
+<div class="settings-card">
+
+<h3>
+
+<i class="fa-solid fa-volume-high"></i>
+
+Sound
+
+</h3>
+
+<label class="setting-item">
+
+<span>Typing Sound</span>
+
+<input
+type="checkbox"
+id="typingSound"
+checked>
+
+</label>
+
+<label class="setting-item">
+
+<span>Key Click Sound</span>
+
+<input
+type="checkbox"
+id="keySound">
+
+</label>
+
+</div>
+
+
+
+
+
+<div class="settings-card">
+
+<h3>
+
+<i class="fa-solid fa-clock"></i>
+
+Typing Timer
+
+</h3>
+
+<select id="defaultTimer">
+
+<option value="30">
+30 Seconds
+</option>
+
+<option value="60" selected>
+60 Seconds
+</option>
+
+<option value="120">
+120 Seconds
+</option>
+
+<option value="300">
+5 Minutes
+</option>
+
+</select>
+
+</div>
+<!-- ==========================
+     PROFILE SETTINGS
+========================== -->
+
+<div class="settings-card">
+
+<h3>
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</h3>
+
+<div class="setting-item">
+
+<span>User Name</span>
+
+<input
+type="text"
+id="userName"
+placeholder="Enter your name">
+
+</div>
+
+<div class="setting-item">
+
+<span>Typing Goal (WPM)</span>
+
+<input
+type="number"
+id="typingGoal"
+placeholder="60">
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================
+     THEME SETTINGS
+========================== -->
+
+<div class="settings-card">
+
+<h3>
+
+<i class="fa-solid fa-brush"></i>
+
+Theme
+
+</h3>
+
+<div class="setting-item">
+
+<span>Accent Color</span>
+
+<input
+type="color"
+id="accentColor"
+value="#4f46e5">
+
+</div>
+
+<div class="setting-item">
+
+<span>Font Size</span>
+
+<select id="fontSize">
+
+<option value="14px">Small</option>
+
+<option value="16px" selected>Medium</option>
+
+<option value="18px">Large</option>
+
+<option value="20px">Extra Large</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================
+     ACTION BUTTONS
+========================== -->
+
+<div class="controls">
+
+<button
+id="saveSettings"
+class="action-btn">
+
+<i class="fa-solid fa-floppy-disk"></i>
+
+Save Settings
+
+</button>
+
+<button
+id="resetSettings"
+class="action-btn secondary">
+
+<i class="fa-solid fa-rotate-left"></i>
+
+Reset
+
+</button>
+
+</div>
+
+</main>
+
+
+
+<script src="../js/settings.js"></script>
+
+</body>
+
+</html>

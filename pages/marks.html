@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Test Marks | TypeMaster</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="../css/typing.css">
+
+</head>
+
+<body>
+
+<header class="typing-header">
+
+<a href="../home.html" class="back-btn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+</a>
+
+<div class="page-title">
+
+<i class="fa-solid fa-chart-column"></i>
+
+<h2>Typing Test Marks</h2>
+
+</div>
+
+<button class="sound-btn">
+
+<i class="fa-solid fa-trophy"></i>
+
+</button>
+
+</header>
+
+<main class="typing-container">
+
+<section class="typing-card">
+
+<div class="typing-info">
+
+<div class="info-box">
+
+<i class="fa-solid fa-gauge-high"></i>
+
+<span>Best WPM</span>
+
+<h3 id="bestWpm">0</h3>
+
+</div>
+
+<div class="info-box">
+
+<i class="fa-solid fa-bullseye"></i>
+
+<span>Best Accuracy</span>
+
+<h3 id="bestAccuracy">0%</h3>
+
+</div>
+
+<div class="info-box">
+
+<i class="fa-solid fa-list-check"></i>
+
+<span>Total Tests</span>
+
+<h3 id="totalTests">0</h3>
+
+</div>
+
+<div class="info-box">
+
+<i class="fa-solid fa-fire"></i>
+
+<span>Current Streak</span>
+
+<h3 id="streak">0</h3>
+
+</div>
+
+</div>
+  <!-- ==========================
+     TEST HISTORY
+========================== -->
+
+<div class="history-section">
+
+<div class="section-title">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+<h2>
+Typing History
+</h2>
+
+</div>
+
+
+
+<div class="history-table">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Type</th>
+
+<th>WPM</th>
+
+<th>Accuracy</th>
+
+<th>Mistakes</th>
+
+<th>Date</th>
+
+</tr>
+
+</thead>
+
+<tbody id="historyTable">
+
+<tr>
+
+<td colspan="5">
+
+No Test History Found
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+
+
+<!-- ACTION BUTTONS -->
+
+<div class="controls">
+
+<button
+
+id="clearHistoryBtn"
+
+class="action-btn secondary">
+
+<i class="fa-solid fa-trash"></i>
+
+Clear History
+
+</button>
+
+
+
+<a
+
+href="../home.html"
+
+class="action-btn">
+
+<i class="fa-solid fa-house"></i>
+
+Home
+
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<script src="../js/marks.js"></script>
+
+</body>
+
+</html>

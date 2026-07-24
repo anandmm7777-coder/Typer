@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Profile | TypeMaster</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="../css/profile.css">
+
+</head>
+
+<body>
+
+<header class="typing-header">
+
+<a href="../home.html" class="back-btn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+</a>
+
+<div class="page-title">
+
+<i class="fa-solid fa-user"></i>
+
+<h2>My Profile</h2>
+
+</div>
+
+</header>
+
+
+
+<main class="settings-container">
+
+<div class="settings-card profile-card">
+
+<div class="profile-image">
+
+<img
+id="profilePreview"
+src="../assets/Images/logo1.png"
+alt="Profile">
+
+</div>
+
+<i class="fa-solid fa-circle-user"></i>
+
+<input
+type="file"
+id="profileImageInput"
+accept="image/*"
+hidden>
+
+<label
+for="profileImageInput"
+class="upload-btn">
+
+<i class="fa-solid fa-camera"></i>
+
+Change Photo
+
+</label>
+<h2 id="profileName">
+Guest User
+</h2>
+
+<p id="profileGoal">
+Typing Goal: 60 WPM
+</p>
+
+</div>
+
+
+
+<div class="settings-card">
+
+<h3>
+
+<i class="fa-solid fa-chart-simple"></i>
+
+Typing Statistics
+
+</h3>
+
+<div class="typing-info">
+
+<div class="info-box">
+
+<i class="fa-solid fa-gauge-high"></i>
+
+<span>Best WPM</span>
+
+<h3 id="bestWpm">0</h3>
+
+</div>
+
+<div class="info-box">
+
+<i class="fa-solid fa-bullseye"></i>
+
+<span>Accuracy</span>
+
+<h3 id="bestAccuracy">0%</h3>
+
+</div>
+
+<div class="info-box">
+
+<i class="fa-solid fa-list-check"></i>
+
+<span>Total Tests</span>
+
+<h3 id="totalTests">0</h3>
+
+</div>
+
+<div class="info-box">
+
+<i class="fa-solid fa-fire"></i>
+
+<span>Streak</span>
+
+<h3 id="streak">0</h3>
+
+</div>
+
+</div>
+
+</div>
+<!-- ==========================
+     ACHIEVEMENTS
+========================== -->
+<!-- 
+<div class="info-box achievement" id="ach1">
+    <i class="fa-solid fa-lock"></i>
+    <span>Beginner</span>
+    <small>Unlock after 5 Tests</small>
+</div>
+
+<div class="info-box achievement" id="ach2">
+    <i class="fa-solid fa-lock"></i>
+    <span>Fast Typist</span>
+    <small>Unlock after 10 Tests</small>
+</div>
+
+<div class="info-box achievement" id="ach3">
+    <i class="fa-solid fa-lock"></i>
+    <span>Pro Level</span>
+    <small>Unlock after 25 Tests</small>
+</div>
+
+<div class="info-box achievement" id="ach4">
+    <i class="fa-solid fa-lock"></i>
+    <span>Typing Master</span>
+    <small>Unlock after 50 Tests</small>
+</div> -->
+  <!-- ==========================================
+     ACHIEVEMENTS SECTION
+========================================== -->
+
+
+<section class="achievement-section">
+
+
+<h2>
+🏆 My Achievements
+</h2>
+
+
+
+<div class="achievement-container">
+
+
+
+<!-- Achievement 1 -->
+
+<div class="achievement-card locked">
+
+
+<div class="lock-icon">
+
+<i class="fa-solid fa-lock"></i>
+
+</div>
+
+
+<div class="achievement-icon">
+
+🏆
+
+</div>
+
+
+<h3>
+Beginner Winner
+</h3>
+
+
+<p>
+Complete 5 typing tests to unlock
+</p>
+
+
+<span class="status">
+
+Locked
+
+</span>
+
+
+</div>
+
+
+
+
+
+<!-- Achievement 2 -->
+
+<div class="achievement-card locked">
+
+
+<div class="lock-icon">
+
+<i class="fa-solid fa-lock"></i>
+
+</div>
+
+
+<div class="achievement-icon">
+
+⚡
+
+</div>
+
+
+<h3>
+Typing Master
+</h3>
+
+
+<p>
+Complete 10 typing tests to unlock
+</p>
+
+
+<span class="status">
+
+Locked
+
+</span>
+
+
+</div>
+
+
+
+
+
+
+<!-- Achievement 3 -->
+
+<div class="achievement-card locked">
+
+
+<div class="lock-icon">
+
+<i class="fa-solid fa-lock"></i>
+
+</div>
+
+
+<div class="achievement-icon">
+
+🚀
+
+</div>
+
+
+<h3>
+Speed Champion
+</h3>
+
+
+<p>
+Complete 25 typing tests to unlock
+</p>
+
+
+<span class="status">
+
+Locked
+
+</span>
+
+
+</div>
+
+
+
+
+
+
+<!-- Achievement 4 -->
+
+<div class="achievement-card locked">
+
+
+<div class="lock-icon">
+
+<i class="fa-solid fa-lock"></i>
+
+</div>
+
+
+<div class="achievement-icon">
+
+👑
+
+</div>
+
+
+<h3>
+TypeMaster Pro
+</h3>
+
+
+<p>
+Complete 50 typing tests to unlock
+</p>
+
+
+<span class="status">
+
+Locked
+
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+<!-- ==========================================
+     CERTIFICATE SECTION
+========================================== -->
+
+
+<section class="certificate-section">
+
+
+<h2>
+🎓 My Certificates
+</h2>
+
+
+
+<div class="certificate-card locked-certificate"
+id="certificate1">
+
+
+
+<div class="certificate-lock">
+
+<i class="fa-solid fa-lock"></i>
+
+<p>
+Complete 5 Tests to Unlock
+</p>
+
+</div>
+
+
+
+
+
+<div class="certificate-content">
+
+
+
+<h1>
+TypeMaster Academy
+</h1>
+
+
+
+<h3>
+Certificate of Achievement
+</h3>
+
+
+
+<p class="present">
+
+This certificate is proudly presented to
+
+</p>
+
+
+
+<h2 class="username">
+
+Your Name
+
+</h2>
+
+
+
+<p>
+
+For successfully completing
+
+<strong>
+5 Typing Tests
+</strong>
+
+</p>
+
+
+
+<div class="certificate-achievement">
+
+🏆 Beginner Winner
+
+</div>
+
+
+
+
+<div class="certificate-footer">
+<button id="downloadCertificate" class="download-btn">
+
+<i class="fa-solid fa-download"></i>
+Download Certificate
+
+</button>
+
+<span>
+
+Date:
+<span id="certificateDate">
+--/--/----
+
+</span>
+
+</span>
+
+
+<span>
+
+TypeMaster
+
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+<!-- ==========================
+     ACCOUNT INFORMATION
+========================== -->
+
+<div class="settings-card">
+
+<h3>
+
+<i class="fa-solid fa-id-card"></i>
+
+Account Information
+
+</h3>
+
+<div class="setting-item">
+
+<span>User Name</span>
+
+<strong id="accountName">
+Guest User
+</strong>
+
+</div>
+
+<div class="setting-item">
+
+<span>Typing Goal</span>
+
+<strong id="accountGoal">
+60 WPM
+</strong>
+
+</div>
+
+<div class="setting-item">
+
+<span>Application</span>
+
+<strong>
+TypeMaster Offline
+</strong>
+
+</div>
+
+<div class="setting-item">
+
+<span>Version</span>
+
+<strong>
+v1.0.0
+</strong>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================
+     ACTION BUTTONS
+========================== -->
+
+<div class="controls">
+
+<a
+href="settings.html"
+class="action-btn">
+
+<i class="fa-solid fa-pen-to-square"></i>
+
+Edit Profile
+
+</a>
+
+<a
+href="../home.html"
+class="action-btn secondary">
+
+<i class="fa-solid fa-house"></i>
+
+Home
+
+</a>
+
+</div>
+
+</main>
+
+
+
+<script src="../js/profile.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+
+</html>

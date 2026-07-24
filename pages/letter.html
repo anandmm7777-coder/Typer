@@ -6,10 +6,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Word Typing | TypeMaster</title>
+<title>Letter Typing | TypeMaster</title>
 
-
-<!-- Google Font -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,25 +15,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 
-<!-- Font Awesome -->
-
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 
-<!-- Typing CSS -->
-
 <link rel="stylesheet" href="../css/typing.css">
+
 
 </head>
 
 
-<body class="word-page">
-
-
-<!-- =========================
-TOP NAVBAR
-========================= -->
+<body class="letter-page">
 
 
 <header class="typing-header">
@@ -48,13 +38,15 @@ TOP NAVBAR
 </a>
 
 
+
 <div class="page-title">
 
-<i class="fa-solid fa-font"></i>
+<i class="fa-solid fa-a"></i>
 
-<h2>Word Typing</h2>
+<h2>Letter Typing</h2>
 
 </div>
+
 
 
 <button class="sound-btn">
@@ -69,13 +61,7 @@ TOP NAVBAR
 
 
 
-<!-- =========================
-MAIN CONTAINER
-========================= -->
-
-
 <main class="typing-container">
-
 
 
 <section class="typing-card">
@@ -101,6 +87,7 @@ Time
 
 
 
+
 <div class="info-box">
 
 <i class="fa-solid fa-gauge-high"></i>
@@ -114,6 +101,8 @@ WPM
 </h3>
 
 </div>
+
+
 
 
 
@@ -132,9 +121,12 @@ Accuracy
 </div>
 
 
+
+
+
 <div class="info-box">
 
-<i class="fa-solid fa-triangle-exclamation"></i>
+<i class="fa-solid fa-xmark"></i>
 
 <span>
 Mistakes
@@ -147,11 +139,11 @@ Mistakes
 </div>
 
 
-
 </div>
 <!-- =========================
-WORD DISPLAY AREA
+LETTER DISPLAY AREA
 ========================= -->
+
 
 <div class="word-area">
 
@@ -161,14 +153,14 @@ WORD DISPLAY AREA
 <i class="fa-solid fa-keyboard"></i>
 
 <p>
-Type the words shown below
+Type the letters shown below
 </p>
 
 </div>
 
 
 
-<div id="wordDisplay" class="word-display">
+<div id="letterDisplay" class="word-display">
 
 Click Start Button To Begin
 
@@ -176,20 +168,25 @@ Click Start Button To Begin
 
 
 
-<!-- =========================
-INPUT BOX
-========================= -->
+
+<!-- INPUT -->
 
 
 <div class="input-area">
 
 
-<input 
+<input
+
 type="text"
+
 id="typingInput"
-placeholder="Start typing here..."
+
+placeholder="Type letters here..."
+
 autocomplete="off"
+
 disabled
+
 >
 
 
@@ -197,24 +194,24 @@ disabled
 
 
 
-<!-- =========================
-PROGRESS BAR
-========================= -->
+
+<!-- PROGRESS -->
 
 
 <div class="progress-container">
 
-<div class="progress-bar" id="progressBar">
-
+<div 
+class="progress-bar" 
+id="progressBar">
 </div>
 
 </div>
 
 
 
-<!-- =========================
-CONTROL BUTTONS
-========================= -->
+
+
+<!-- BUTTONS -->
 
 
 <div class="controls">
@@ -252,6 +249,8 @@ Restart
 
 
 
+
+
 <!-- =========================
 RESULT CARD
 ========================= -->
@@ -262,10 +261,10 @@ RESULT CARD
 
 <div class="result-header">
 
-<i class="fa-solid fa-chart-simple"></i>
+<i class="fa-solid fa-chart-line"></i>
 
 <h2>
-Test Result
+Letter Result
 </h2>
 
 </div>
@@ -273,6 +272,7 @@ Test Result
 
 
 <div class="result-grid">
+
 
 
 <div>
@@ -284,10 +284,12 @@ Test Result
 </h3>
 
 <p>
-WPM
+Speed
 </p>
 
 </div>
+
+
 
 
 
@@ -307,9 +309,11 @@ Accuracy
 
 
 
+
+
 <div>
 
-<i class="fa-solid fa-circle-xmark"></i>
+<i class="fa-solid fa-triangle-exclamation"></i>
 
 <h3 id="resultMistakes">
 0
@@ -326,34 +330,34 @@ Mistakes
 </div>
 
 
+
+
+
 <button 
 class="save-btn"
 id="saveResult"
 >
 
+
 <i class="fa-solid fa-floppy-disk"></i>
 
+
 Save Result
+
 
 </button>
 
 
-
 </section>
+
 
 
 </main>
 
 
 
-<!-- =========================
-SCRIPT
-========================= -->
 
-
-<script src="../data/words.js"></script>
-
-<script src="../js/typing.js"></script>
+<script src="../js/letter.js"></script>
 
 
 </>

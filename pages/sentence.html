@@ -6,10 +6,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Word Typing | TypeMaster</title>
+<title>Sentence Typing | TypeMaster</title>
 
-
-<!-- Google Font -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,25 +15,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 
-<!-- Font Awesome -->
-
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 
-<!-- Typing CSS -->
-
 <link rel="stylesheet" href="../css/typing.css">
+
 
 </head>
 
+<body class="sentence-page">
 
-<body class="word-page">
-
-
-<!-- =========================
-TOP NAVBAR
-========================= -->
 
 
 <header class="typing-header">
@@ -48,13 +38,17 @@ TOP NAVBAR
 </a>
 
 
+
 <div class="page-title">
 
-<i class="fa-solid fa-font"></i>
+<i class="fa-solid fa-align-left"></i>
 
-<h2>Word Typing</h2>
+<h2>
+Sentence Typing
+</h2>
 
 </div>
+
 
 
 <button class="sound-btn">
@@ -69,10 +63,6 @@ TOP NAVBAR
 
 
 
-<!-- =========================
-MAIN CONTAINER
-========================= -->
-
 
 <main class="typing-container">
 
@@ -82,7 +72,10 @@ MAIN CONTAINER
 
 
 
+
+
 <div class="typing-info">
+
 
 
 <div class="info-box">
@@ -98,6 +91,8 @@ Time
 </h3>
 
 </div>
+
+
 
 
 
@@ -117,6 +112,8 @@ WPM
 
 
 
+
+
 <div class="info-box">
 
 <i class="fa-solid fa-bullseye"></i>
@@ -130,6 +127,9 @@ Accuracy
 </h3>
 
 </div>
+
+
+
 
 
 <div class="info-box">
@@ -150,8 +150,9 @@ Mistakes
 
 </div>
 <!-- =========================
-WORD DISPLAY AREA
+SENTENCE DISPLAY AREA
 ========================= -->
+
 
 <div class="word-area">
 
@@ -161,14 +162,15 @@ WORD DISPLAY AREA
 <i class="fa-solid fa-keyboard"></i>
 
 <p>
-Type the words shown below
+Type the sentence shown below
 </p>
 
 </div>
 
 
 
-<div id="wordDisplay" class="word-display">
+
+<div id="sentenceDisplay" class="word-display">
 
 Click Start Button To Begin
 
@@ -176,20 +178,26 @@ Click Start Button To Begin
 
 
 
-<!-- =========================
-INPUT BOX
-========================= -->
+
+
+<!-- INPUT BOX -->
 
 
 <div class="input-area">
 
 
-<input 
+<input
+
 type="text"
+
 id="typingInput"
-placeholder="Start typing here..."
+
+placeholder="Type sentence here..."
+
 autocomplete="off"
+
 disabled
+
 >
 
 
@@ -197,14 +205,18 @@ disabled
 
 
 
-<!-- =========================
-PROGRESS BAR
-========================= -->
+
+
+<!-- PROGRESS BAR -->
 
 
 <div class="progress-container">
 
-<div class="progress-bar" id="progressBar">
+<div
+
+class="progress-bar"
+
+id="progressBar">
 
 </div>
 
@@ -212,18 +224,20 @@ PROGRESS BAR
 
 
 
-<!-- =========================
-CONTROL BUTTONS
-========================= -->
+
+
+
+<!-- BUTTONS -->
 
 
 <div class="controls">
 
 
-<button 
+<button
+
 id="startBtn"
-class="action-btn"
->
+
+class="action-btn">
 
 <i class="fa-solid fa-play"></i>
 
@@ -233,10 +247,13 @@ Start
 
 
 
-<button 
+
+
+<button
+
 id="restartBtn"
-class="action-btn secondary"
->
+
+class="action-btn secondary">
 
 <i class="fa-solid fa-rotate-right"></i>
 
@@ -245,10 +262,14 @@ Restart
 </button>
 
 
+
 </div>
 
 
 </section>
+
+
+
 
 
 
@@ -262,17 +283,23 @@ RESULT CARD
 
 <div class="result-header">
 
-<i class="fa-solid fa-chart-simple"></i>
+
+<i class="fa-solid fa-chart-line"></i>
+
 
 <h2>
-Test Result
+Sentence Result
 </h2>
+
 
 </div>
 
 
 
+
+
 <div class="result-grid">
+
 
 
 <div>
@@ -291,6 +318,8 @@ WPM
 
 
 
+
+
 <div>
 
 <i class="fa-solid fa-bullseye"></i>
@@ -304,6 +333,8 @@ Accuracy
 </p>
 
 </div>
+
+
 
 
 
@@ -326,14 +357,21 @@ Mistakes
 </div>
 
 
-<button 
+
+
+
+
+<button
+
 class="save-btn"
-id="saveResult"
->
+
+id="saveResult">
+
 
 <i class="fa-solid fa-floppy-disk"></i>
 
 Save Result
+
 
 </button>
 
@@ -342,18 +380,17 @@ Save Result
 </section>
 
 
+
 </main>
 
 
 
-<!-- =========================
-SCRIPT
-========================= -->
 
 
-<script src="../data/words.js"></script>
+<script src="../data/sentences.js"></script>
 
-<script src="../js/typing.js"></script>
+<script src="../js/sentence.js"></script>
+
 
 
 </>

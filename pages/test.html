@@ -6,39 +6,39 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Word Typing | TypeMaster</title>
+
+<title>Typing Test | TypeMaster</title>
 
 
-<!-- Google Font -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 
-<!-- Font Awesome -->
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 
-<!-- Typing CSS -->
 
 <link rel="stylesheet" href="../css/typing.css">
+
 
 </head>
 
 
-<body class="word-page">
+
+<body class="test-page">
 
 
-<!-- =========================
-TOP NAVBAR
-========================= -->
 
 
 <header class="typing-header">
+
 
 
 <a href="../home.html" class="back-btn">
@@ -48,20 +48,34 @@ TOP NAVBAR
 </a>
 
 
+
+
+
 <div class="page-title">
 
-<i class="fa-solid fa-font"></i>
 
-<h2>Word Typing</h2>
+<i class="fa-solid fa-stopwatch"></i>
+
+
+<h2>
+Typing Test
+</h2>
+
 
 </div>
 
 
+
+
+
 <button class="sound-btn">
+
 
 <i class="fa-solid fa-volume-high"></i>
 
+
 </button>
+
 
 
 </header>
@@ -69,9 +83,7 @@ TOP NAVBAR
 
 
 
-<!-- =========================
-MAIN CONTAINER
-========================= -->
+
 
 
 <main class="typing-container">
@@ -82,7 +94,11 @@ MAIN CONTAINER
 
 
 
+
+
+
 <div class="typing-info">
+
 
 
 <div class="info-box">
@@ -98,6 +114,10 @@ Time
 </h3>
 
 </div>
+
+
+
+
 
 
 
@@ -117,6 +137,10 @@ WPM
 
 
 
+
+
+
+
 <div class="info-box">
 
 <i class="fa-solid fa-bullseye"></i>
@@ -130,6 +154,11 @@ Accuracy
 </h3>
 
 </div>
+
+
+
+
+
 
 
 <div class="info-box">
@@ -148,10 +177,12 @@ Mistakes
 
 
 
+
 </div>
 <!-- =========================
-WORD DISPLAY AREA
+TEST AREA
 ========================= -->
+
 
 <div class="word-area">
 
@@ -161,94 +192,172 @@ WORD DISPLAY AREA
 <i class="fa-solid fa-keyboard"></i>
 
 <p>
-Type the words shown below
+Type the given text as fast as possible
 </p>
 
 </div>
 
 
 
-<div id="wordDisplay" class="word-display">
 
-Click Start Button To Begin
+
+<div id="testDisplay" class="word-display">
+
+Click Start Test To Begin
 
 </div>
 
 
 
-<!-- =========================
-INPUT BOX
-========================= -->
+
+
+
+<!-- INPUT -->
 
 
 <div class="input-area">
 
 
-<input 
-type="text"
+<textarea
+
 id="typingInput"
+
 placeholder="Start typing here..."
+
 autocomplete="off"
+
 disabled
->
+
+></textarea>
 
 
 </div>
 
 
 
-<!-- =========================
-PROGRESS BAR
-========================= -->
+
+
+
+
+<!-- PROGRESS -->
 
 
 <div class="progress-container">
 
-<div class="progress-bar" id="progressBar">
+
+<div
+
+class="progress-bar"
+
+id="progressBar">
 
 </div>
 
+
 </div>
 
 
 
-<!-- =========================
-CONTROL BUTTONS
-========================= -->
+
+
+
+
+<!-- TEST OPTIONS -->
+
+
+<div class="test-options">
+
+
+
+<button class="time-btn active">
+
+30 Sec
+
+</button>
+
+
+
+
+<button class="time-btn">
+
+60 Sec
+
+</button>
+
+
+
+
+<button class="time-btn">
+
+120 Sec
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- BUTTONS -->
 
 
 <div class="controls">
 
 
-<button 
+
+<button
+
 id="startBtn"
-class="action-btn"
->
+
+class="action-btn">
+
 
 <i class="fa-solid fa-play"></i>
 
-Start
+
+Start Test
+
 
 </button>
 
 
 
-<button 
+
+
+
+<button
+
 id="restartBtn"
-class="action-btn secondary"
->
+
+class="action-btn secondary">
+
 
 <i class="fa-solid fa-rotate-right"></i>
 
+
 Restart
 
+
 </button>
+
 
 
 </div>
 
 
+
 </section>
+
+
+
+
+
 
 
 
@@ -260,34 +369,50 @@ RESULT CARD
 <section class="result-card" id="resultCard">
 
 
+
 <div class="result-header">
 
-<i class="fa-solid fa-chart-simple"></i>
+
+<i class="fa-solid fa-chart-line"></i>
+
 
 <h2>
 Test Result
 </h2>
 
+
 </div>
+
+
+
+
 
 
 
 <div class="result-grid">
 
 
+
 <div>
 
 <i class="fa-solid fa-gauge-high"></i>
+
 
 <h3 id="resultWpm">
 0
 </h3>
 
+
 <p>
 WPM
 </p>
 
+
 </div>
+
+
+
+
 
 
 
@@ -295,15 +420,22 @@ WPM
 
 <i class="fa-solid fa-bullseye"></i>
 
+
 <h3 id="resultAccuracy">
 0%
 </h3>
+
 
 <p>
 Accuracy
 </p>
 
+
 </div>
+
+
+
+
 
 
 
@@ -311,51 +443,71 @@ Accuracy
 
 <i class="fa-solid fa-circle-xmark"></i>
 
+
 <h3 id="resultMistakes">
 0
 </h3>
+
 
 <p>
 Mistakes
 </p>
 
-</div>
-
-
 
 </div>
 
 
-<button 
+
+
+</div>
+
+
+
+
+
+
+
+
+<button
+
 class="save-btn"
-id="saveResult"
->
+
+id="saveResult">
+
 
 <i class="fa-solid fa-floppy-disk"></i>
 
+
 Save Result
 
+
 </button>
+
+
 
 
 
 </section>
 
 
+
+
+
+
 </main>
 
 
 
-<!-- =========================
-SCRIPT
-========================= -->
 
 
-<script src="../data/words.js"></script>
-
-<script src="../js/typing.js"></script>
 
 
-</>
+<script src="../data/paragraphs.js"></script>
+
+<script src="../js/test.js"></script>
+
+
+
+</bod>
 
 </html>
