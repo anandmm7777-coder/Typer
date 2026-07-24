@@ -66,7 +66,7 @@ user.photoURL
 );
 
 window.location.href =
-"dashboard.html";
+"home.html";
 
 }
 
@@ -97,10 +97,10 @@ onAuthStateChanged(auth, (user) => {
     if (!user) {
 
         if (
-            window.location.pathname.includes("dashboard.html")
+            window.location.pathname.includes("home.html")
         ) {
 
-            window.location.href = "index.html";
+            window.location.href = "login.html";
         }
 
         return;
@@ -143,7 +143,7 @@ onAuthStateChanged(auth, (user) => {
 
                     localStorage.clear();
 
-                    window.location.href = "logout.html";
+                    window.location.href = "login.html";
 
                 } catch (error) {
 
