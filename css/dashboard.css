@@ -1,0 +1,797 @@
+/* ==========================================
+   TYPEMASTER SETTINGS
+   PART 1
+========================================== */
+
+
+/* ==========================
+   SETTINGS PAGE
+========================== */
+
+.settings-container{
+
+width:100%;
+
+max-width:1000px;
+
+margin:40px auto;
+
+padding:20px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:25px;
+
+}
+
+
+
+/* ==========================
+   SETTINGS CARD
+========================== */
+
+.settings-card{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:20px;
+
+padding:25px;
+
+box-shadow:
+
+0 10px 30px rgba(0,0,0,.15);
+
+transition:.35s;
+
+}
+
+
+
+.settings-card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+
+0 18px 40px rgba(0,0,0,.25);
+
+}
+
+
+
+/* ==========================
+   CARD TITLE
+========================== */
+
+.settings-card h3{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+font-size:20px;
+
+font-weight:700;
+
+color:#ffffff;
+
+margin-bottom:22px;
+
+}
+
+
+
+.settings-card h3 i{
+
+color:var(--primary-color);
+
+font-size:22px;
+
+}
+
+
+
+/* ==========================
+   SETTING ITEM
+========================== */
+
+.setting-item{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:20px;
+
+padding:16px 0;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+
+
+.setting-item:last-child{
+
+border-bottom:none;
+
+}
+
+
+
+.setting-item span{
+
+font-size:16px;
+
+font-weight:500;
+
+color:#e5e7eb;
+
+}
+/* ==========================================
+   TYPEMASTER SETTINGS
+   PART 2
+========================================== */
+
+
+/* ==========================
+   INPUT
+========================== */
+
+.setting-item input[type="text"],
+.setting-item input[type="number"],
+.setting-item select{
+
+width:220px;
+
+padding:12px 16px;
+
+border:none;
+
+outline:none;
+
+border-radius:12px;
+
+background:rgba(255,255,255,.10);
+
+color:#ffffff;
+
+font-size:15px;
+
+font-weight:500;
+
+transition:.30s;
+
+border:1px solid rgba(255,255,255,.15);
+
+}
+
+
+
+.setting-item input[type="text"]::placeholder,
+.setting-item input[type="number"]::placeholder{
+
+color:#bdbdbd;
+
+}
+
+
+
+.setting-item input[type="text"]:focus,
+.setting-item input[type="number"]:focus,
+.setting-item select:focus{
+
+border-color:var(--primary-color);
+
+box-shadow:
+
+0 0 0 4px rgba(79,70,229,.20);
+
+}
+
+
+
+/* ==========================
+   COLOR PICKER
+========================== */
+
+.setting-item input[type="color"]{
+
+width:60px;
+
+height:42px;
+
+border:none;
+
+background:none;
+
+cursor:pointer;
+
+border-radius:10px;
+
+overflow:hidden;
+
+}
+
+
+
+.setting-item input[type="color"]::-webkit-color-swatch{
+
+border:none;
+
+border-radius:10px;
+
+}
+
+
+
+.setting-item input[type="color"]::-webkit-color-swatch-wrapper{
+
+padding:0;
+
+}
+
+
+
+/* ==========================
+   TOGGLE SWITCH
+========================== */
+
+.setting-item input[type="checkbox"]{
+
+appearance:none;
+
+-webkit-appearance:none;
+
+width:58px;
+
+height:30px;
+
+background:#4b5563;
+
+border-radius:30px;
+
+cursor:pointer;
+
+position:relative;
+
+transition:.30s;
+
+}
+
+
+
+.setting-item input[type="checkbox"]::before{
+
+content:"";
+
+position:absolute;
+
+top:3px;
+
+left:3px;
+
+width:24px;
+
+height:24px;
+
+border-radius:50%;
+
+background:#ffffff;
+
+transition:.30s;
+
+box-shadow:0 3px 8px rgba(0,0,0,.25);
+
+}
+
+
+
+.setting-item input[type="checkbox"]:checked{
+
+background:var(--primary-color);
+
+}
+
+
+
+.setting-item input[type="checkbox"]:checked::before{
+
+left:31px;
+
+}
+
+
+
+/* ==========================
+   SELECT OPTION
+========================== */
+
+.setting-item select option{
+
+background:#1f2937;
+
+color:#ffffff;
+
+}
+/* ==========================================
+   TYPEMASTER SETTINGS
+   PART 3
+========================================== */
+
+
+/* ==========================
+   ACTION BUTTONS
+========================== */
+
+.controls{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:20px;
+
+margin:35px 0;
+
+flex-wrap:wrap;
+
+}
+
+
+
+.controls .action-btn{
+
+min-width:190px;
+
+height:55px;
+
+border:none;
+
+outline:none;
+
+border-radius:15px;
+
+cursor:pointer;
+
+font-size:16px;
+
+font-weight:600;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+text-decoration:none;
+
+transition:.35s;
+
+background:linear-gradient(
+135deg,
+var(--primary-color),
+#6d5dfc
+);
+
+color:#ffffff;
+
+box-shadow:
+0 10px 25px rgba(79,70,229,.35);
+
+}
+
+
+
+.controls .action-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 16px 35px rgba(79,70,229,.45);
+
+}
+
+
+
+.controls .secondary{
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.15);
+
+color:#ffffff;
+
+box-shadow:none;
+
+}
+
+
+
+.controls .secondary:hover{
+
+background:rgba(255,255,255,.15);
+
+}
+
+
+
+/* ==========================
+   DARK MODE
+========================== */
+
+body.dark{
+
+background:#0f172a;
+
+color:#ffffff;
+
+}
+
+
+
+body.dark .settings-card{
+
+background:rgba(15,23,42,.85);
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+
+
+body.dark .setting-item{
+
+border-color:rgba(255,255,255,.08);
+
+}
+
+
+
+body.dark
+.setting-item input[type="text"],
+
+body.dark
+.setting-item input[type="number"],
+
+body.dark
+.setting-item select{
+
+background:#1e293b;
+
+color:#ffffff;
+
+border-color:#334155;
+
+}
+
+
+
+body.dark
+.setting-item input::placeholder{
+
+color:#94a3b8;
+
+}
+
+
+
+/* ==========================
+   SMOOTH ANIMATION
+========================== */
+
+.settings-card,
+
+.setting-item,
+
+.action-btn{
+
+transition:all .3s ease;
+
+}
+/* ==========================================
+   TYPEMASTER SETTINGS
+   PART 4
+========================================== */
+
+
+/* ==========================
+   CUSTOM SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(
+180deg,
+var(--primary-color),
+#7c3aed
+);
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#6366f1;
+
+}
+
+
+
+/* ==========================
+   TABLET RESPONSIVE
+========================== */
+
+@media (max-width:900px){
+
+.settings-container{
+
+padding:15px;
+
+}
+
+.settings-card{
+
+padding:20px;
+
+}
+
+.setting-item{
+
+gap:15px;
+
+}
+
+.setting-item input[type="text"],
+.setting-item input[type="number"],
+.setting-item select{
+
+width:180px;
+
+}
+
+}
+
+
+
+/* ==========================
+   MOBILE RESPONSIVE
+========================== */
+
+@media (max-width:768px){
+
+.settings-card{
+
+padding:18px;
+
+border-radius:16px;
+
+}
+
+.setting-item{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:12px;
+
+}
+
+.setting-item span{
+
+font-size:15px;
+
+}
+
+.setting-item input[type="text"],
+.setting-item input[type="number"],
+.setting-item select{
+
+width:100%;
+
+}
+
+.setting-item input[type="color"]{
+
+width:100%;
+
+height:45px;
+
+}
+
+.controls{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.controls .action-btn{
+
+width:100%;
+
+min-width:100%;
+
+}
+
+}
+
+
+
+/* ==========================
+   SMALL MOBILE
+========================== */
+
+@media (max-width:480px){
+
+.settings-container{
+
+padding:10px;
+
+}
+
+.settings-card h3{
+
+font-size:18px;
+
+}
+
+.setting-item span{
+
+font-size:14px;
+
+}
+
+.controls .action-btn{
+
+height:50px;
+
+font-size:15px;
+
+}
+
+}
+
+
+
+/* ==========================
+   PREMIUM EFFECT
+========================== */
+
+.settings-card{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.settings-card::before{
+
+content:"";
+
+position:absolute;
+
+top:-80px;
+
+right:-80px;
+
+width:180px;
+
+height:180px;
+
+background:rgba(255,255,255,.05);
+
+border-radius:50%;
+
+pointer-events:none;
+
+}
+
+.settings-card::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-70px;
+
+left:-70px;
+
+width:150px;
+
+height:150px;
+
+background:rgba(255,255,255,.03);
+
+border-radius:50%;
+
+pointer-events:none;
+
+}
+
+/* ==========================
+   BACK BUTTON
+========================== */
+
+.back-btn{
+
+width:52px;
+
+height:52px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:14px;
+
+background:rgba(255,255,255,.10);
+
+border:1px solid rgba(255,255,255,.15);
+
+color:#ffffff;
+
+font-size:24px;
+
+transition:.3s;
+
+cursor:pointer;
+
+text-decoration:none;
+
+}
+
+.back-btn:hover{
+
+transform:scale(1.08);
+
+background:var(--primary-color);
+
+box-shadow:0 10px 25px rgba(79,70,229,.35);
+
+}
+
+.back-btn i{
+
+font-size:26px;
+
+}
+
+/* ==========================
+   END
+========================== */
