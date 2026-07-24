@@ -1,0 +1,3248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TypeMaster Dashboard</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<!-- <link rel="stylesheet" href="style.css"> -->
+  <style>
+    /* ==========================================
+   TYPEMASTER DASHBOARD
+   STYLE.CSS - PART 1A
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+
+--primary:#4F46E5;
+--secondary:#7C3AED;
+--accent:#06B6D4;
+
+--success:#22C55E;
+--warning:#F59E0B;
+--danger:#EF4444;
+
+--bg:#0B1120;
+--bg2:#111827;
+--card:rgba(255,255,255,.08);
+
+--text:#FFFFFF;
+--text2:#CBD5E1;
+
+--border:rgba(255,255,255,.10);
+
+--radius:20px;
+
+--shadow:
+0 20px 40px rgba(0,0,0,.35);
+
+}
+
+*{
+
+margin:0;
+padding:0;
+
+box-sizing:border-box;
+
+font-family:'Poppins',sans-serif;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+background:
+linear-gradient(135deg,#0B1120,#111827,#1E293B);
+
+color:var(--text);
+
+min-height:100vh;
+
+overflow-x:hidden;
+
+}
+
+/* =============================
+BACKGROUND
+============================= */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:-180px;
+left:-180px;
+
+width:420px;
+height:420px;
+
+border-radius:50%;
+
+background:#4F46E5;
+
+filter:blur(120px);
+
+opacity:.30;
+
+z-index:-2;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+right:-180px;
+bottom:-180px;
+
+width:420px;
+height:420px;
+
+border-radius:50%;
+
+background:#06B6D4;
+
+filter:blur(120px);
+
+opacity:.25;
+
+z-index:-2;
+
+}
+
+/* Floating Glow */
+
+.glow{
+
+position:fixed;
+
+width:220px;
+height:220px;
+
+border-radius:50%;
+
+background:#7C3AED;
+
+filter:blur(100px);
+
+opacity:.15;
+
+top:40%;
+
+left:45%;
+
+animation:floatGlow 10s infinite alternate;
+
+z-index:-2;
+
+}
+
+@keyframes floatGlow{
+
+0%{
+
+transform:
+translate(-60px,-20px);
+
+}
+
+100%{
+
+transform:
+translate(80px,50px);
+
+}
+
+}
+
+/* =============================
+LINKS
+============================= */
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+button{
+
+font-family:'Poppins',sans-serif;
+
+border:none;
+
+outline:none;
+
+cursor:pointer;
+
+}
+
+ul{
+
+list-style:none;
+
+}
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+    /* ==========================================
+   SIDEBAR
+========================================== */
+
+.sidebar{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:270px;
+height:100vh;
+
+padding:22px 18px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+border-right:1px solid rgba(255,255,255,.10);
+
+box-shadow:0 10px 35px rgba(0,0,0,.30);
+
+overflow-y:auto;
+
+transition:.35s ease;
+
+z-index:999;
+
+}
+
+/* Logo */
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+margin-bottom:35px;
+
+padding:12px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.05);
+
+}
+
+.logo i{
+
+width:55px;
+height:55px;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+font-size:24px;
+
+border-radius:16px;
+
+background:linear-gradient(135deg,#4F46E5,#06B6D4);
+
+color:#fff;
+
+box-shadow:0 8px 18px rgba(79,70,229,.35);
+
+}
+
+.logo h2{
+
+font-size:24px;
+
+font-weight:700;
+
+color:#fff;
+
+}
+
+/* Menu */
+
+.sidebar ul{
+
+display:flex;
+
+flex-direction:column;
+
+gap:8px;
+
+}
+
+.sidebar ul li{
+
+border-radius:16px;
+
+overflow:hidden;
+
+transition:.3s;
+
+}
+
+.sidebar ul li a{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+padding:15px 18px;
+
+font-size:15px;
+
+font-weight:500;
+
+color:#CBD5E1;
+
+transition:.3s;
+
+}
+
+/* Icon */
+
+.sidebar ul li a i{
+
+width:42px;
+height:42px;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+border-radius:12px;
+
+background:rgba(255,255,255,.06);
+
+font-size:17px;
+
+transition:.3s;
+
+}
+
+/* Hover */
+
+.sidebar ul li:hover{
+
+transform:translateX(6px);
+
+}
+
+.sidebar ul li:hover a{
+
+color:#fff;
+
+background:rgba(255,255,255,.05);
+
+}
+
+.sidebar ul li:hover a i{
+
+background:linear-gradient(135deg,#4F46E5,#06B6D4);
+
+color:#fff;
+
+}
+
+/* Active */
+
+.sidebar ul li.active{
+
+background:linear-gradient(135deg,#4F46E5,#06B6D4);
+
+box-shadow:0 12px 25px rgba(79,70,229,.35);
+
+}
+
+.sidebar ul li.active a{
+
+color:#fff;
+
+}
+
+.sidebar ul li.active a i{
+
+background:rgba(255,255,255,.18);
+
+color:#fff;
+
+}
+
+/* Scrollbar */
+
+.sidebar::-webkit-scrollbar{
+
+width:6px;
+
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+
+background:#4F46E5;
+
+border-radius:10px;
+
+}
+
+.sidebar::-webkit-scrollbar-track{
+
+background:transparent;
+
+}
+
+
+    /* ==========================================
+   MAIN CONTENT
+========================================== */
+
+.main{
+
+margin-left:270px;
+
+min-height:100vh;
+
+padding:25px;
+
+transition:.35s ease;
+
+}
+
+/* ==========================================
+   TOPBAR
+========================================== */
+
+.topbar{
+
+height:80px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:0 22px;
+
+border-radius:20px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.10);
+
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+margin-bottom:30px;
+
+}
+
+/* Menu Button */
+
+#menuBtn{
+
+width:52px;
+
+height:52px;
+
+border:none;
+
+border-radius:14px;
+
+background:rgba(255,255,255,.08);
+
+color:#fff;
+
+font-size:20px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+transition:.3s;
+
+}
+
+#menuBtn:hover{
+
+background:linear-gradient(135deg,#4F46E5,#06B6D4);
+
+transform:rotate(90deg);
+
+}
+
+/* Title */
+
+.topbar h1{
+
+font-size:28px;
+
+font-weight:700;
+
+color:#fff;
+
+letter-spacing:.5px;
+
+}
+
+/* Right Icons */
+
+.top-icons{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+.top-icons button{
+
+width:48px;
+
+height:48px;
+
+border:none;
+
+border-radius:14px;
+
+background:rgba(255,255,255,.08);
+
+color:#fff;
+
+font-size:18px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+transition:.3s;
+
+}
+
+.top-icons button:hover{
+
+background:linear-gradient(135deg,#4F46E5,#06B6D4);
+
+transform:translateY(-4px);
+
+box-shadow:0 10px 20px rgba(79,70,229,.35);
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:991px){
+
+.sidebar{
+
+left:-280px;
+
+}
+
+.sidebar.show{
+
+left:0;
+
+}
+
+.main{
+
+margin-left:0;
+
+padding:18px;
+
+}
+
+.topbar{
+
+padding:0 15px;
+
+}
+
+.topbar h1{
+
+font-size:22px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.topbar{
+
+height:70px;
+
+}
+
+.topbar h1{
+
+font-size:18px;
+
+}
+
+.top-icons{
+
+gap:8px;
+
+}
+
+.top-icons button{
+
+width:42px;
+
+height:42px;
+
+font-size:16px;
+
+}
+
+#menuBtn{
+
+width:45px;
+
+height:45px;
+
+font-size:18px;
+
+}
+
+}
+
+/* ==========================================
+   WELCOME SECTION
+========================================== */
+
+.welcome{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:30px;
+
+margin-top:25px;
+
+padding:40px;
+
+border-radius:28px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+-webkit-backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.10);
+
+box-shadow:0 20px 40px rgba(0,0,0,.30);
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+/* Animated Gradient Border */
+
+.welcome::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+padding:2px;
+
+border-radius:28px;
+
+background:linear-gradient(
+135deg,
+#4F46E5,
+#06B6D4,
+#7C3AED
+);
+
+-webkit-mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+
+-webkit-mask-composite:xor;
+
+mask-composite:exclude;
+
+pointer-events:none;
+
+}
+
+/* Left Side */
+
+.welcome-text{
+
+flex:1;
+
+z-index:2;
+
+}
+
+.welcome-text h2{
+
+font-size:38px;
+
+font-weight:700;
+
+color:#fff;
+
+margin-bottom:12px;
+
+line-height:1.2;
+
+}
+
+.welcome-text p{
+
+font-size:16px;
+
+color:#CBD5E1;
+
+margin-bottom:28px;
+
+line-height:1.8;
+
+max-width:520px;
+
+}
+
+/* Button */
+
+.start-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:15px 28px;
+
+border-radius:16px;
+
+font-size:16px;
+
+font-weight:600;
+
+background:linear-gradient(
+135deg,
+#4F46E5,
+#06B6D4
+);
+
+color:#fff;
+
+box-shadow:0 15px 30px rgba(79,70,229,.35);
+
+transition:.35s;
+
+}
+
+.start-btn i{
+
+font-size:18px;
+
+}
+
+.start-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 20px 40px rgba(79,70,229,.45);
+
+}
+
+/* Right Side */
+
+.welcome-image{
+
+width:180px;
+
+height:180px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+background:linear-gradient(
+135deg,
+#4F46E5,
+#06B6D4
+);
+
+box-shadow:
+
+0 0 40px rgba(79,70,229,.35),
+
+0 0 80px rgba(6,182,212,.25);
+
+animation:floatIcon 3s ease-in-out infinite;
+
+}
+
+.welcome-image i{
+
+font-size:75px;
+
+color:#fff;
+
+}
+
+/* Animation */
+
+@keyframes floatIcon{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.welcome{
+
+flex-direction:column;
+
+text-align:center;
+
+padding:30px;
+
+}
+
+.welcome-text p{
+
+max-width:100%;
+
+}
+
+.welcome-image{
+
+width:140px;
+
+height:140px;
+
+}
+
+.welcome-image i{
+
+font-size:58px;
+
+}
+
+}
+
+    /*=========================================
+  STATISTICS SECTION
+=========================================*/
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:22px;
+
+margin:30px 0;
+
+}
+
+/* Card */
+
+.stat-card{
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+padding:24px;
+
+border-radius:22px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.10);
+
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+overflow:hidden;
+
+transition:.35s;
+
+}
+
+/* Glow */
+
+.stat-card::before{
+
+content:"";
+
+position:absolute;
+
+top:-60px;
+
+right:-60px;
+
+width:130px;
+
+height:130px;
+
+border-radius:50%;
+
+background:rgba(79,70,229,.20);
+
+filter:blur(40px);
+
+transition:.4s;
+
+}
+
+.stat-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 22px 45px rgba(79,70,229,.25);
+
+}
+
+.stat-card:hover::before{
+
+transform:scale(1.4);
+
+}
+
+/* Icon */
+
+.stat-icon{
+
+width:72px;
+
+height:72px;
+
+border-radius:20px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:linear-gradient(135deg,#4F46E5,#06B6D4);
+
+box-shadow:0 12px 25px rgba(79,70,229,.35);
+
+flex-shrink:0;
+
+}
+
+.stat-icon i{
+
+font-size:28px;
+
+color:#fff;
+
+}
+
+/* Text */
+
+.stat-info{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.stat-info h3{
+
+font-size:32px;
+
+font-weight:700;
+
+color:#fff;
+
+line-height:1;
+
+margin-bottom:8px;
+
+}
+
+.stat-info p{
+
+font-size:15px;
+
+color:#CBD5E1;
+
+font-weight:500;
+
+letter-spacing:.3px;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
+.stat-card{
+
+padding:20px;
+
+}
+
+.stat-icon{
+
+width:60px;
+
+height:60px;
+
+}
+
+.stat-icon i{
+
+font-size:24px;
+
+}
+
+.stat-info h3{
+
+font-size:28px;
+
+}
+
+}
+/* ==========================================
+   FEATURE CARDS
+========================================== */
+
+.features{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
+margin-top:35px;
+
+}
+
+.feature-card{
+
+position:relative;
+
+padding:28px;
+
+border-radius:24px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.10);
+
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+overflow:hidden;
+
+transition:.35s;
+
+color:#fff;
+
+}
+
+/* Top Glow */
+
+.feature-card::before{
+
+content:"";
+
+position:absolute;
+
+top:-70px;
+
+right:-70px;
+
+width:160px;
+
+height:160px;
+
+border-radius:50%;
+
+background:rgba(79,70,229,.20);
+
+filter:blur(50px);
+
+transition:.4s;
+
+}
+
+.feature-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 25px 45px rgba(79,70,229,.30);
+
+}
+
+.feature-card:hover::before{
+
+transform:scale(1.4);
+
+}
+
+/* Icon */
+
+.feature-icon{
+
+width:70px;
+
+height:70px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:18px;
+
+background:linear-gradient(135deg,#4F46E5,#06B6D4);
+
+margin-bottom:20px;
+
+box-shadow:0 12px 25px rgba(79,70,229,.35);
+
+transition:.35s;
+
+}
+
+.feature-icon i{
+
+font-size:28px;
+
+color:#fff;
+
+}
+
+.feature-card:hover .feature-icon{
+
+transform:rotate(8deg) scale(1.08);
+
+}
+
+/* Heading */
+
+.feature-card h3{
+
+font-size:22px;
+
+font-weight:700;
+
+margin-bottom:12px;
+
+}
+
+/* Description */
+
+.feature-card p{
+
+font-size:15px;
+
+line-height:1.8;
+
+color:#CBD5E1;
+
+}
+
+/* Bottom Arrow */
+
+.feature-card .arrow{
+
+margin-top:22px;
+
+display:flex;
+
+justify-content:flex-end;
+
+}
+
+.feature-card .arrow i{
+
+width:42px;
+
+height:42px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.08);
+
+transition:.3s;
+
+}
+
+.feature-card:hover .arrow i{
+
+background:linear-gradient(135deg,#4F46E5,#06B6D4);
+
+transform:translateX(6px);
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.features{
+
+grid-template-columns:1fr;
+
+}
+
+.feature-card{
+
+padding:22px;
+
+}
+
+.feature-card h3{
+
+font-size:20px;
+
+}
+
+.feature-icon{
+
+width:60px;
+
+height:60px;
+
+}
+
+.feature-icon i{
+
+font-size:24px;
+
+}
+
+}
+
+    /* ==========================================
+   RECENT ACTIVITY
+========================================== */
+
+.activity{
+
+margin-top:35px;
+
+padding:28px;
+
+border-radius:24px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.10);
+
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+.section-title{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:20px;
+
+}
+
+.section-title h2{
+
+font-size:24px;
+
+font-weight:700;
+
+color:#fff;
+
+}
+
+.section-title a{
+
+color:#06B6D4;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.section-title a:hover{
+
+color:#4F46E5;
+
+}
+
+.activity-card{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:20px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.35s;
+
+}
+
+.activity-card:hover{
+
+transform:translateY(-4px);
+
+background:rgba(255,255,255,.08);
+
+}
+
+.activity-card h4{
+
+font-size:18px;
+
+margin-bottom:6px;
+
+color:#fff;
+
+}
+
+.activity-card p{
+
+font-size:14px;
+
+color:#CBD5E1;
+
+}
+
+.activity-card i{
+
+font-size:30px;
+
+color:#06B6D4;
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+
+margin-top:40px;
+
+padding:25px;
+
+text-align:center;
+
+border-top:1px solid rgba(255,255,255,.10);
+
+color:#94A3B8;
+
+font-size:14px;
+
+}
+
+/* ==========================================
+   SMOOTH ANIMATIONS
+========================================== */
+
+.feature-card,
+.stat-card,
+.activity-card,
+.welcome{
+
+animation:fadeUp .6s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ==========================================
+   CUSTOM SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(#4F46E5,#06B6D4);
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:linear-gradient(#06B6D4,#4F46E5);
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+.activity{
+
+padding:20px;
+
+}
+
+.section-title{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:10px;
+
+}
+
+.activity-card{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:15px;
+
+}
+
+footer{
+
+font-size:13px;
+
+padding:20px;
+
+}
+
+}
+/* ==========================================
+   SEARCH POPUP
+   PART 2
+========================================== */
+
+
+/* ==========================
+   OVERLAY
+========================== */
+
+.search-overlay{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.55);
+
+backdrop-filter:blur(8px);
+
+display:flex;
+
+justify-content:center;
+
+align-items:flex-start;
+
+padding-top:90px;
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.35s;
+
+z-index:9999;
+
+}
+
+
+
+.search-overlay.active{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+
+
+/* ==========================
+   POPUP
+========================== */
+
+.search-popup{
+
+width:95%;
+
+max-width:650px;
+
+background:#1e293b;
+
+border-radius:18px;
+
+overflow:hidden;
+
+box-shadow:0 20px 50px rgba(0,0,0,.4);
+
+transform:translateY(-30px);
+
+transition:.35s;
+
+}
+
+
+
+.search-overlay.active .search-popup{
+
+transform:translateY(0);
+
+}
+
+
+
+/* ==========================
+   SEARCH HEADER
+========================== */
+
+.search-header{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+padding:18px;
+
+background:#0f172a;
+
+}
+
+
+
+.search-header i{
+
+font-size:22px;
+
+color:#6366f1;
+
+}
+
+
+
+.search-header input{
+
+flex:1;
+
+background:none;
+
+border:none;
+
+outline:none;
+
+font-size:17px;
+
+color:#fff;
+
+}
+
+
+
+.search-header input::placeholder{
+
+color:#94a3b8;
+
+}
+
+
+
+/* ==========================
+   CLOSE BUTTON
+========================== */
+
+.close-search{
+
+width:42px;
+
+height:42px;
+
+border:none;
+
+border-radius:12px;
+
+background:#334155;
+
+color:#fff;
+
+cursor:pointer;
+
+font-size:18px;
+
+transition:.3s;
+
+}
+
+
+
+.close-search:hover{
+
+background:#ef4444;
+
+}
+
+
+
+/* ==========================
+   RESULTS
+========================== */
+
+.search-results{
+
+max-height:420px;
+
+overflow-y:auto;
+
+}
+
+
+
+.search-item{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+padding:18px;
+
+cursor:pointer;
+
+transition:.25s;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+
+
+.search-item:hover{
+
+background:rgba(99,102,241,.15);
+
+}
+
+
+
+.search-item i{
+
+font-size:22px;
+
+color:#6366f1;
+
+min-width:28px;
+
+}
+
+
+
+.search-item h4{
+
+font-size:17px;
+
+color:#fff;
+
+margin-bottom:4px;
+
+}
+
+
+
+.search-item p{
+
+font-size:13px;
+
+color:#cbd5e1;
+
+}
+   /* ==========================================
+   NOTIFICATION BLUR OVERLAY
+========================================== */
+
+
+.notification-overlay{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,0.55);
+
+backdrop-filter:blur(10px);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.35s;
+
+z-index:99999;
+
+}
+
+
+/* OPEN */
+
+.notification-overlay.active{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+
+
+/* ==========================
+   NOTIFICATION PANEL
+========================== */
+
+
+.notification-panel{
+
+width:90%;
+
+max-width:500px;
+
+max-height:600px;
+
+background:#ffffff;
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+transform:translateY(-40px);
+
+transition:.35s;
+
+}
+
+
+
+.notification-overlay.active 
+.notification-panel{
+
+transform:translateY(0);
+
+}
+
+
+
+/* ==========================
+   HEADER
+========================== */
+
+
+.notification-header{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:20px;
+
+background:#0f172a;
+
+color:white;
+
+}
+
+
+.notification-header h2{
+
+font-size:20px;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+
+.notification-header h2 i{
+
+color:#6366f1;
+
+}
+
+
+
+#closeNotification{
+
+width:40px;
+
+height:40px;
+
+border:none;
+
+border-radius:50%;
+
+background:#334155;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+}
+
+
+
+#closeNotification:hover{
+
+background:#ef4444;
+
+}
+
+
+
+/* ==========================
+   NOTIFICATION LIST
+========================== */
+
+
+#notificationBox{
+
+padding:15px;
+
+max-height:450px;
+
+overflow-y:auto;
+
+}
+
+
+
+.notification-item{
+
+background:#f1f5f9;
+
+padding:15px;
+
+border-radius:12px;
+
+margin-bottom:10px;
+
+}
+
+
+
+.notification-item h4{
+
+color:#2563eb;
+
+margin-bottom:5px;
+
+}
+
+
+.notification-item p{
+
+color:#334155;
+
+font-size:14px;
+
+}
+
+
+.notification-item small{
+
+color:#64748b;
+
+font-size:12px;
+
+}
+
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+
+@media(max-width:600px){
+
+.notification-panel{
+
+width:95%;
+
+}
+
+
+.notification-header h2{
+
+font-size:17px;
+
+}
+
+} 
+    
+  </style>
+
+</head>
+
+<body>
+
+<!--==========================
+SIDEBAR
+===========================-->
+
+<aside class="sidebar" id="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-keyboard"></i>
+
+<h2>TypeMaster</h2>
+
+</div>
+
+<ul>
+
+<li class="active">
+<a href="home.html">
+<i class="fa-solid fa-house"></i>
+<span>Dashboard</span>
+</a>
+</li>
+
+<li>
+<a href="../pages/word.html">
+<i class="fa-solid fa-font"></i>
+<span>Word Typing</span>
+</a>
+</li>
+
+<li>
+<a href="../pages/letter.html">
+<i class="fa-solid fa-a"></i>
+<span>Letter Typing</span>
+</a>
+</li>
+
+<li>
+<a href="../pages/sentence.html">
+<i class="fa-solid fa-align-left"></i>
+<span>Sentence Typing</span>
+</a>
+</li>
+
+<li>
+<a href="../pages/paragraph.html">
+<i class="fa-solid fa-file-lines"></i>
+<span>Paragraph Typing</span>
+</a>
+</li>
+
+<li>
+<a href="../pages/test.html">
+<i class="fa-solid fa-stopwatch"></i>
+<span>Typing Test</span>
+</a>
+</li>
+
+<li>
+<a href="../pages/marks.html">
+<i class="fa-solid fa-chart-line"></i>
+<span>View Marks</span>
+</a>
+</li>
+
+<li>
+<a href="../pages/settings.html">
+<i class="fa-solid fa-gear"></i>
+<span>Settings</span>
+</a>
+</li>
+
+<li>
+<a href="../pages/about.html">
+<i class="fa-solid fa-circle-info"></i>
+<span>About</span>
+</a>
+</li>
+
+<li>
+<a href="login.html">
+<i class="fa-solid fa-right-from-bracket"></i>
+<span>Logout</span>
+</a>
+</li>
+
+</ul>
+
+</aside>
+
+<!--==========================
+MAIN
+===========================-->
+
+<div class="main">
+
+<header class="topbar">
+
+<button id="menuBtn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<h1>
+
+TypeMaster Dashboard
+
+</h1>
+
+<div class="top-icons">
+
+<button id="searchBtn">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</button>
+
+<button id="notificationBtn">
+
+<i class="fa-solid fa-bell"></i>
+
+</button>
+
+<button>
+
+<i class="fa-solid fa-user"></i>
+
+</button>
+
+</div>
+
+</header>
+
+<!--==========================
+WELCOME SECTION
+===========================-->
+
+<section class="welcome">
+
+<div class="welcome-text">
+
+<h2>
+
+Welcome Back
+
+</h2>
+
+<p>
+
+Practice every day and increase your typing speed.
+
+</p>
+
+<a href="../pages/word.html" class="start-btn">
+
+Start Practice
+
+</a>
+
+</div>
+
+<div class="welcome-image">
+
+<i class="fa-solid fa-keyboard"></i>
+
+</div>
+
+</section>
+<!--==========================
+STATISTICS
+===========================-->
+
+<section class="stats">
+
+<div class="stat-card">
+
+<div class="stat-icon">
+<i class="fa-solid fa-gauge-high"></i>
+</div>
+
+<div class="stat-info">
+<h3 id="bestWpm">0</h3>
+<p>Best WPM</p>
+</div>
+
+</div>
+
+<div class="stat-card">
+
+<div class="stat-icon">
+<i class="fa-solid fa-bullseye"></i>
+</div>
+
+<div class="stat-info">
+<h3 id="accuracy">0%</h3>
+<p>Accuracy</p>
+</div>
+
+</div>
+
+<div class="stat-card">
+
+<div class="stat-icon">
+<i class="fa-solid fa-file-circle-check"></i>
+</div>
+
+<div class="stat-info">
+<h3 id="tests">0</h3>
+<p>Tests</p>
+</div>
+
+</div>
+
+<div class="stat-card">
+
+<div class="stat-icon">
+<i class="fa-solid fa-fire"></i>
+</div>
+
+<div class="stat-info">
+<h3 id="streak">0</h3>
+<p>Day Streak</p>
+</div>
+
+</div>
+
+</section>
+
+<!--==========================
+FEATURE CARDS
+===========================-->
+
+<section class="features">
+
+<a href="../pages/word.html" class="feature-card">
+
+    <div class="feature-icon">
+        <i class="fa-solid fa-font"></i>
+    </div>
+
+    <h3>Word Typing</h3>
+
+    <p>
+        Practice random words and improve speed.
+    </p>
+
+    <div class="arrow">
+        <i class="fa-solid fa-arrow-right"></i>
+    </div>
+
+</a>
+
+<a href="../pages/letter.html" class="feature-card">
+
+    <div class="feature-icon">
+        <i class="fa-solid fa-a"></i>
+    </div>
+
+    <h3>Letter Typing</h3>
+
+    <p>
+        Learn keyboard keys with accuracy.
+    </p>
+
+    <div class="arrow">
+        <i class="fa-solid fa-arrow-right"></i>
+    </div>
+
+</a>
+
+<a href="../pages/sentence.html" class="feature-card">
+
+    <div class="feature-icon">
+        <i class="fa-solid fa-align-left"></i>
+    </div>
+
+    <h3>Sentence Typing</h3>
+
+    <p>
+        Type complete sentences quickly.
+    </p>
+
+    <div class="arrow">
+        <i class="fa-solid fa-arrow-right"></i>
+    </div>
+
+</a>
+
+<a href="../pages/paragraph.html" class="feature-card">
+
+    <div class="feature-icon">
+        <i class="fa-solid fa-file-lines"></i>
+    </div>
+
+    <h3>Paragraph Typing</h3>
+
+    <p>
+        Improve long paragraph typing.
+    </p>
+
+    <div class="arrow">
+        <i class="fa-solid fa-arrow-right"></i>
+    </div>
+
+</a>
+
+<a href="../pages/test.html" class="feature-card">
+
+    <div class="feature-icon">
+        <i class="fa-solid fa-stopwatch"></i>
+    </div>
+
+    <h3>Typing Test</h3>
+
+    <p>
+        Take a timed typing test.
+    </p>
+
+    <div class="arrow">
+        <i class="fa-solid fa-arrow-right"></i>
+    </div>
+
+</a>
+
+<a href="../pages/marks.html" class="feature-card">
+
+    <div class="feature-icon">
+        <i class="fa-solid fa-chart-line"></i>
+    </div>
+
+    <h3>View Test Marks</h3>
+
+    <p>
+        See your saved typing history.
+    </p>
+
+    <div class="arrow">
+        <i class="fa-solid fa-arrow-right"></i>
+    </div>
+
+</a>
+
+</section>
+<!--==========================
+RECENT ACTIVITY
+===========================-->
+
+<section class="activity">
+
+<div class="section-title">
+
+<h2>Recent Activity</h2>
+
+<a href="../pages/marks.html">
+
+View All
+
+</a>
+
+</div>
+
+<div class="activity-card">
+
+<div>
+
+<h4>Last Test</h4>
+
+<p>No test completed yet.</p>
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==========================
+FOOTER
+===========================-->
+
+<footer>
+
+<p>
+
+© 2026 TypeMaster. All Rights Reserved.
+
+</p>
+
+</footer>
+
+</div>
+<!-- ==========================
+     SEARCH POPUP
+========================== -->
+
+<div id="searchOverlay" class="search-overlay">
+
+<div class="search-popup">
+
+<div class="search-header">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search Word, Letter, Test, Profile..."
+autocomplete="off">
+
+<button
+id="closeSearch"
+class="close-search">
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+<div
+id="searchResults"
+class="search-results">
+
+<!-- Search Results -->
+
+</div>
+
+</div>
+
+</div>
+  <!-- ==========================
+ NOTIFICATION OVERLAY
+========================== -->
+
+<div id="notificationOverlay" class="notification-overlay">
+
+
+<div class="notification-panel">
+
+
+<div class="notification-header">
+
+<h2>
+<i class="fa-solid fa-bell"></i>
+Notifications
+</h2>
+
+
+<button id="closeNotification">
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+
+</div>
+
+
+<div id="notificationBox">
+
+
+<!-- Notifications will appear here -->
+
+
+</div>
+
+
+</div>
+
+
+</div>
+<script>
+  /* ==========================================
+   TYPEMASTER DASHBOARD
+   script.js
+========================================== */
+
+
+// ===============================
+// SIDEBAR MENU
+// ===============================
+
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("sidebar");
+
+
+if(menuBtn){
+
+    menuBtn.addEventListener("click",()=>{
+
+        sidebar.classList.toggle("show");
+
+    });
+
+}
+
+
+
+// Close sidebar outside click (Mobile)
+
+document.addEventListener("click",(e)=>{
+
+    if(window.innerWidth <= 991){
+
+        if(
+            sidebar &&
+            !sidebar.contains(e.target) &&
+            !menuBtn.contains(e.target)
+        ){
+
+            sidebar.classList.remove("show");
+
+        }
+
+    }
+
+});
+
+
+
+
+// ===============================
+// LOAD USER STATS
+// ===============================
+
+
+let userStats = JSON.parse(
+localStorage.getItem("typingStats")
+);
+
+
+
+if(!userStats){
+
+    userStats = {
+
+        bestWpm:0,
+        accuracy:0,
+        tests:0,
+        streak:0
+
+    };
+
+}
+
+
+
+const bestWpm =
+document.getElementById("bestWpm");
+
+const accuracy =
+document.getElementById("accuracy");
+
+const tests =
+document.getElementById("tests");
+
+const streak =
+document.getElementById("streak");
+
+
+
+if(bestWpm){
+
+    bestWpm.innerHTML =
+    userStats.bestWpm;
+
+}
+
+
+if(accuracy){
+
+    accuracy.innerHTML =
+    userStats.accuracy+"%";
+
+}
+
+
+if(tests){
+
+    tests.innerHTML =
+    userStats.tests;
+
+}
+
+
+if(streak){
+
+    streak.innerHTML =
+    userStats.streak;
+
+}
+
+
+
+
+
+// ===============================
+// NUMBER ANIMATION
+// ===============================
+
+
+function animateNumber(element,value){
+
+    let start = 0;
+
+    let speed = value/50;
+
+
+    let timer = setInterval(()=>{
+
+
+        start += speed;
+
+
+        if(start >= value){
+
+            element.innerHTML=value;
+
+            clearInterval(timer);
+
+        }
+
+        else{
+
+            element.innerHTML=Math.floor(start);
+
+        }
+
+
+    },20);
+
+}
+
+
+
+if(bestWpm){
+
+animateNumber(
+bestWpm,
+userStats.bestWpm
+);
+
+}
+
+
+if(tests){
+
+animateNumber(
+tests,
+userStats.tests
+);
+
+}
+
+
+
+
+// ===============================
+// NOTIFICATION BUTTON
+// ===============================
+
+
+const notification =
+document.querySelector(".top-icons button:nth-child(2)");
+
+
+
+if(notification){
+
+notification.addEventListener("click",()=>{
+
+
+// alert(
+// "No new notifications"
+// );
+
+
+});
+
+}
+
+
+
+// ===============================
+// PROFILE BUTTON
+// ===============================
+
+
+const profile =
+document.querySelector(".top-icons button:nth-child(3)");
+
+
+
+if(profile){
+
+profile.addEventListener("click",()=>{
+
+
+window.location.href="../pages/profile.html";
+
+
+});
+
+}
+
+
+
+
+
+// ===============================
+// LOGOUT
+// ===============================
+
+
+const logout =
+document.querySelector(
+'a[href="login.html"]'
+);
+
+
+
+if(logout){
+
+logout.addEventListener("click",(e)=>{
+
+
+let confirmLogout =
+confirm(
+"Are you sure you want to logout?"
+);
+
+
+
+if(!confirmLogout){
+
+e.preventDefault();
+
+}
+
+
+});
+
+
+}
+
+
+
+
+
+// ===============================
+// PAGE LOAD EFFECT
+// ===============================
+
+
+window.addEventListener(
+"load",
+()=>{
+
+
+document.body.style.opacity="1";
+
+
+}
+
+);
+
+
+
+
+
+// ===============================
+// SAVE LAST VISIT
+// ===============================
+
+
+localStorage.setItem(
+"lastVisit",
+new Date().toLocaleString()
+);
+
+
+
+
+
+console.log(
+"TypeMaster Dashboard Loaded Successfully"
+);
+  /* ==========================================
+   SEARCH POPUP
+========================================== */
+
+const searchBtn = document.getElementById("searchBtn");
+const searchOverlay = document.getElementById("searchOverlay");
+const closeSearch = document.getElementById("closeSearch");
+const searchInput = document.getElementById("searchInput");
+const searchResults = document.getElementById("searchResults");
+
+
+
+// ===============================
+// SEARCH DATA
+// ===============================
+
+const searchData = [
+
+{
+title:"Word Typing",
+desc:"Practice random words",
+icon:"fa-font",
+url:"pages/word.html"
+},
+
+{
+title:"Letter Typing",
+desc:"Keyboard key practice",
+icon:"fa-a",
+url:"pages/letter.html"
+},
+
+{
+title:"Sentence Typing",
+desc:"Practice complete sentences",
+icon:"fa-align-left",
+url:"pages/sentence.html"
+},
+
+{
+title:"Paragraph Typing",
+desc:"Long paragraph practice",
+icon:"fa-file-lines",
+url:"pages/paragraph.html"
+},
+
+{
+title:"Typing Test",
+desc:"Timed typing test",
+icon:"fa-stopwatch",
+url:"pages/test.html"
+},
+
+{
+title:"View Test Marks",
+desc:"See typing history",
+icon:"fa-chart-line",
+url:"pages/marks.html"
+},
+
+{
+title:"Profile",
+desc:"Your profile",
+icon:"fa-user",
+url:"pages/profile.html"
+},
+
+{
+title:"Settings",
+desc:"Application settings",
+icon:"fa-gear",
+url:"pages/settings.html"
+},
+
+{
+title:"About",
+desc:"About TypeMaster",
+icon:"fa-circle-info",
+url:"pages/about.html"
+}
+
+];
+
+
+
+// ===============================
+// OPEN SEARCH
+// ===============================
+
+searchBtn.addEventListener("click",()=>{
+
+searchOverlay.classList.add("active");
+
+searchInput.focus();
+
+showResults("");
+
+});
+
+
+
+// ===============================
+// CLOSE SEARCH
+// ===============================
+
+closeSearch.addEventListener("click",()=>{
+
+searchOverlay.classList.remove("active");
+
+searchInput.value="";
+
+});
+
+
+
+// Click outside popup
+
+searchOverlay.addEventListener("click",(e)=>{
+
+if(e.target===searchOverlay){
+
+searchOverlay.classList.remove("active");
+
+}
+
+});
+
+
+
+// ===============================
+// SHOW RESULTS
+// ===============================
+
+function showResults(keyword){
+
+searchResults.innerHTML="";
+
+const result=searchData.filter(item=>
+
+item.title.toLowerCase().includes(keyword.toLowerCase())
+
+);
+
+if(result.length===0){
+
+searchResults.innerHTML=
+
+"<div class='search-item'><h4>No Results Found</h4></div>";
+
+return;
+
+}
+
+result.forEach(item=>{
+
+searchResults.innerHTML+=`
+
+<div class="search-item"
+
+onclick="location.href='${item.url}'">
+
+<i class="fa-solid ${item.icon}"></i>
+
+<div>
+
+<h4>${item.title}</h4>
+
+<p>${item.desc}</p>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+
+// ===============================
+// LIVE SEARCH
+// ===============================
+
+searchInput.addEventListener("input",()=>{
+
+showResults(searchInput.value);
+
+});
+
+
+
+// ===============================
+// ESC KEY
+// ===============================
+
+document.addEventListener("keydown",(e)=>{
+
+if(e.key==="Escape"){
+
+searchOverlay.classList.remove("active");
+
+}
+
+});
+  /* ==========================================
+   NOTIFICATION POPUP SYSTEM
+========================================== */
+
+
+const notificationBtn = 
+document.getElementById("notificationBtn");
+
+
+const notificationOverlay = 
+document.getElementById("notificationOverlay");
+
+
+const closeNotification = 
+document.getElementById("closeNotification");
+
+
+const notificationBox = 
+document.getElementById("notificationBox");
+
+
+
+// ===============================
+// OPEN NOTIFICATION
+// ===============================
+
+if(notificationBtn){
+
+notificationBtn.addEventListener("click",()=>{
+
+
+showNotifications();
+
+
+notificationOverlay.classList.add("active");
+
+
+});
+
+}
+
+
+
+
+// ===============================
+// CLOSE BUTTON
+// ===============================
+
+if(closeNotification){
+
+closeNotification.addEventListener("click",()=>{
+
+
+notificationOverlay.classList.remove("active");
+
+
+});
+
+}
+
+
+
+
+// ===============================
+// CLICK OUTSIDE CLOSE
+// ===============================
+
+if(notificationOverlay){
+
+notificationOverlay.addEventListener("click",(e)=>{
+
+
+if(e.target === notificationOverlay){
+
+
+notificationOverlay.classList.remove("active");
+
+
+}
+
+
+});
+
+}
+
+
+
+// ===============================
+// SHOW NOTIFICATIONS
+// ===============================
+
+function showNotifications(){
+
+
+let data = 
+
+JSON.parse(
+
+localStorage.getItem("notifications")
+
+) || [];
+
+
+
+notificationBox.innerHTML="";
+
+
+
+if(data.length===0){
+
+
+notificationBox.innerHTML=
+
+`
+
+<div class="notification-item">
+
+<h4>No Notifications</h4>
+
+<p>Complete a test to get notifications.</p>
+
+</div>
+
+`;
+
+
+return;
+
+
+}
+
+
+
+data.forEach(item=>{
+
+
+notificationBox.innerHTML +=
+
+`
+
+<div class="notification-item">
+
+
+<h4>
+🔔 Test Completed
+</h4>
+
+
+<p>
+${item.text}
+</p>
+
+
+<small>
+${item.time}
+</small>
+
+
+</div>
+
+`;
+
+
+});
+
+
+}
+</script>
+<!-- <script src="../data/words.js"></script> -->
+</body>
+
+</html>

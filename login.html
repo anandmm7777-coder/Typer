@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* ==========================================
+   PROFESSIONAL GOOGLE LOGIN
+   STYLE.CSS
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb,#3b82f6);
+    background-size:400% 400%;
+
+    animation:bgMove 12s ease infinite;
+
+    position:relative;
+
+}
+
+@keyframes bgMove{
+
+0%{background-position:0% 50%;}
+
+50%{background-position:100% 50%;}
+
+100%{background-position:0% 50%;}
+
+}
+
+.background{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+overflow:hidden;
+
+}
+
+.circle{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(20px);
+
+animation:float 10s linear infinite;
+
+opacity:.45;
+
+}
+
+.c1{
+
+width:260px;
+height:260px;
+
+background:#00e5ff;
+
+top:-80px;
+left:-70px;
+
+}
+
+.c2{
+
+width:320px;
+height:320px;
+
+background:#7c3aed;
+
+right:-120px;
+bottom:-100px;
+
+animation-duration:14s;
+
+}
+
+.c3{
+
+width:180px;
+height:180px;
+
+background:#22c55e;
+
+top:55%;
+left:12%;
+
+animation-duration:9s;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0px) rotate(0deg);
+
+}
+
+50%{
+
+transform:translateY(-25px) rotate(180deg);
+
+}
+
+100%{
+
+transform:translateY(0px) rotate(360deg);
+
+}
+
+}
+
+.login-box{
+
+position:relative;
+
+z-index:10;
+
+width:92%;
+max-width:430px;
+
+padding:45px 35px;
+
+border-radius:28px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.18);
+
+box-shadow:
+
+0 25px 60px rgba(0,0,0,.35),
+
+0 0 20px rgba(255,255,255,.08);
+
+text-align:center;
+
+animation:popup .8s ease;
+
+}
+
+@keyframes popup{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px) scale(.92);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0) scale(1);
+
+}
+
+}
+
+.logo{
+
+width:90px;
+height:90px;
+
+margin-bottom:20px;
+
+animation:logoSpin 1.2s ease;
+
+}
+
+@keyframes logoSpin{
+
+0%{
+
+transform:scale(.3) rotate(-180deg);
+
+opacity:0;
+
+}
+
+100%{
+
+transform:scale(1) rotate(0deg);
+
+opacity:1;
+
+}
+
+}
+
+.login-box h1{
+
+font-size:32px;
+
+font-weight:700;
+
+color:#fff;
+
+margin-bottom:12px;
+
+}
+
+.login-box p{
+
+font-size:15px;
+
+color:#e5e7eb;
+
+margin-bottom:35px;
+
+line-height:1.6;
+
+}
+
+.google-btn{
+
+width:100%;
+
+height:60px;
+
+border:none;
+
+border-radius:16px;
+
+background:#fff;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:14px;
+
+cursor:pointer;
+
+font-size:17px;
+
+font-weight:600;
+
+color:#202124;
+
+transition:.35s;
+
+}
+
+.google-btn img{
+
+width:26px;
+height:26px;
+
+}
+
+.google-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 15px 35px rgba(0,0,0,.22);
+
+}
+
+.google-btn:active{
+
+transform:scale(.97);
+
+}
+
+.divider{
+
+margin-top:30px;
+
+}
+
+.divider span{
+
+font-size:13px;
+
+color:#f1f5f9;
+
+opacity:.9;
+
+letter-spacing:.5px;
+
+}
+
+@media(max-width:600px){
+
+.login-box{
+
+padding:35px 22px;
+
+border-radius:22px;
+
+}
+
+.logo{
+
+width:80px;
+height:80px;
+
+}
+
+.login-box h1{
+
+font-size:28px;
+
+}
+
+.google-btn{
+
+height:56px;
+
+font-size:16px;
+
+}
+
+  }
+</style>
+</head>
+
+<body>
+
+<div class="background">
+
+<div class="circle c1"></div>
+
+<div class="circle c2"></div>
+
+<div class="circle c3"></div>
+
+</div>
+
+<div class="login-box">
+
+<img
+class="logo"
+src="https://www.gstatic.com/images/branding/product/2x/googleg_96dp.png"
+alt="Google">
+
+<h1>Welcome Back</h1>
+
+<p>
+
+Sign in to continue
+
+</p>
+
+<button
+id="googleLoginBtn"
+class="google-btn">
+
+<img
+src="https://developers.google.com/identity/images/g-logo.png"
+alt="Google">
+
+<span>
+
+Continue with Google
+
+</span>
+
+</button>
+
+<div class="divider">
+
+<span>
+
+Secure Login using Firebase
+
+</span>
+
+</div>
+
+</div>
+
+<script type="module" src="firebase-config.js"></script>
+
+<script>
+  import { auth } from "./firebase-config.js";
+
+import {
+  GoogleAuthProvider,
+  signInWithPopup,
+  onAuthStateChanged,
+  signOut
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
+
+const provider = new GoogleAuthProvider();
+
+provider.setCustomParameters({
+  prompt: "select_account"
+});
+
+const loginBtn = document.getElementById("googleLoginBtn");
+const logoutBtn = document.getElementById("logoutBtn");
+
+// ==========================
+// GOOGLE LOGIN
+// ==========================
+
+if (loginBtn) {
+
+  loginBtn.addEventListener("click", async () => {
+
+    try {
+
+      await signInWithPopup(auth, provider);
+
+      window.location.href = "home.html";
+
+    } catch (error) {
+
+      console.error(error);
+
+      alert(error.message);
+
+    }
+
+  });
+
+}
+
+// ==========================
+// AUTO LOGIN
+// ==========================
+
+onAuthStateChanged(auth, (user) => {
+
+  // Login page
+  if (window.location.pathname.includes("login.html")) {
+
+    if (user) {
+
+      window.location.href = "home.html";
+
+    }
+
+  }
+
+  // Home page
+  if (window.location.pathname.includes("home.html")) {
+
+    if (!user) {
+
+      window.location.href = "login.html";
+
+      return;
+
+    }
+
+    const name = document.getElementById("userName");
+    const email = document.getElementById("userEmail");
+    const photo = document.getElementById("userPhoto");
+
+    if (name) name.textContent = user.displayName;
+    if (email) email.textContent = user.email;
+    if (photo) photo.src = user.photoURL;
+
+  }
+
+});
+
+// ==========================
+// LOGOUT
+// ==========================
+
+if (logoutBtn) {
+
+  logoutBtn.addEventListener("click", async () => {
+
+    try {
+
+      await signOut(auth);
+
+      window.location.href = "login.html";
+
+    } catch (error) {
+
+      alert(error.message);
+
+    }
+
+  });
+
+    }
+</script>
+
+</body>
+</html>
